@@ -1,6 +1,6 @@
 # Project Title
 
-User Registration and Contract Calculation offer
+User Registration and Contract Calculation offer: Backend
 
 ## Getting Started
 
