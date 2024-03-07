@@ -1,0 +1,100 @@
+openapi: 3.0.3
+info:
+  title: Decision Tree API
+  description: this allows you to get the decision tree from the ebe database
+  version: "1"
+servers:
+  - url: "http://localhost:9090/contractdemo/users/login/v1"
+    description: (LOCAL)
+  - url: "http://localhost:9090/contractdemo/users/login/v1"
+    description: (LOCAL)
+paths:
+  /users/register/v1:
+    post:
+      tags:
+        - register user
+      description: Register user Request and Response
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/User"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+
+  /login/v1:
+    post:
+      tags:
+        - user login
+      description: User login Request and Response
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserLoginRequest"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserRegistrationResponse"
+
+components:
+  schemas:
+    RegisterUserResponse:
+      type: object
+      properties:
+        node:
+          $ref: "#/components/schemas/User"
+
+    User:
+      type: object
+      description: defines uer attributes
+      x-implements: ['java.io.Serializable']
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+        email:
+          type: string
+
+    UserLoginRequest:
+      type: object
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+
+    UserRegistrationRequest:
+      type: object
+      x-implements: ['java.io.Serializable']
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+        email:
+          type: string
+
+    UserRegistrationResponse:
+      type: object
+      description: defines uer attributes
+      x-implements: [ 'java.io.Serializable' ]
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+        email:
+          type: string
+
+
+
