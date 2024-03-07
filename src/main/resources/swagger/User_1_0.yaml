@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
-  title: Decision Tree API
-  description: this allows you to get the decision tree from the ebe database
+  title: User API
+  description: User related objects
   version: "1"
 servers:
   - url: "http://localhost:9090/contractdemo/users/login/v1"

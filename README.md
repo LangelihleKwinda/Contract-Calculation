@@ -49,7 +49,7 @@ Endpoint: http://localhost:9090/contractdemo/users/login/v1
 Sample request file:     src/main/resources/data/userLogin.json
 
 Search user: Verify is user has created	
-Endpoint: ui.ebeconsole.outside.entry                                                                                                                    
+Endpoint: http://localhost:9090/contractdemo/users/search/{username}/v1                                                                                                                    
 Sample request:     src/main/resources/data/registerUser.json
 
 Calculate repayment options:
